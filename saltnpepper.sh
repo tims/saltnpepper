@@ -10,10 +10,15 @@ else
   exit 1
 fi
 
+if [ $2 ]; then
+  DATE=`date -v$2d "+%Y.%m.%d"`
+else
+  DATE=`date "+%Y.%m.%d"`
+fi
+
 HOME=$1
 NAME=`basename $HOME`
 MASTER_FILE=$HOME/$NAME.rst
-DATE=`date "+%Y.%m.%d"`
 FILE=$HOME/$DATE.rst
 
 if [ -f $FILE ]; then
