@@ -1,4 +1,4 @@
-This script opens textmate on daily .rst file. It will also create a pdf of all your daily files so far.
+This script opens textmate on a daily .rst file. It will also create a pdf of all your daily files so far.
 
 
 Edit saltnpepper.sh to set the text editor of your choice.
