@@ -41,3 +41,5 @@ do
 done
 
 $EDITOR $FILE
+
+rst2pdf $MASTER_FILE
