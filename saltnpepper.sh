@@ -35,7 +35,12 @@ if [ -f $MASTER_FILE ]; then
   rm $MASTER_FILE
 fi
 
-for rstfile in `ls $HOME | grep .rst | sort`
+echo ":Title: $name" >> $MASTER_FILE
+echo ":Author: Tim Sell" >> $MASTER_FILE
+echo ":Date: `date`" >> $MASTER_FILE
+echo >> $MASTER_FILE
+
+for rstfile in `ls $HOME | grep .rst | grep -v $NAME.rst | sort`
 do
   echo ".. include:: $rstfile" >> $MASTER_FILE
 done
