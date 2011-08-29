@@ -2,6 +2,8 @@
 set -e
 
 EDITOR=mate
+USERNAME=`whoami`
+AUTHOR=`finger $USERNAME | grep Name | awk -F "Name: " '{print $2}'`
 
 if [ -d $1 ]; then
   HOME=$1
@@ -35,9 +37,9 @@ if [ -f $MASTER_FILE ]; then
   rm $MASTER_FILE
 fi
 
-echo ":Title: $name" >> $MASTER_FILE
-echo ":Author: Tim Sell" >> $MASTER_FILE
-echo ":Date: `date`" >> $MASTER_FILE
+echo ":Title: $NAME" >> $MASTER_FILE
+echo ":Author: $AUTHOR" >> $MASTER_FILE
+echo ":Date: $DATE" >> $MASTER_FILE
 echo >> $MASTER_FILE
 
 for rstfile in `ls $HOME | grep .rst | grep -v $NAME.rst | sort`
